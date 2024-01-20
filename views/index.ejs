@@ -1,14 +1,22 @@
 <%- include("partials/header.ejs") %>
 
 <h1>Hi, this is Sriya</h1>
-
+<ul>
+<% if(locals.result){ %>
+    <li>
+    <h3><%= result.blogtitle %></h3>
+    <h4><%= result.blogauthor %></h4>
+    <p><%= result.blogcontent %></p>
+</li>
+<% } %>
+</ul>
 <h1>Create your blog</h1>
 <form action="/submit" method="POST" >
     <label>Enter the title of the blog</label>
-    <input type="text">
+    <input type="text" name="title">
     <label>Enter Author name</label>
-    <input type="text">
+    <input type="text" name="author">
     <label>Start blogging</label>
-    <input type="text">
+    <input type="text" name="blcontent">
     <input type="submit" value="Create">
 </form>
